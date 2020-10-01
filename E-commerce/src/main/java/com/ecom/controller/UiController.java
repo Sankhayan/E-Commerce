@@ -76,7 +76,7 @@ public class UiController {
 	public void saveToCart(@RequestBody EcomCart userCart) {
 		cartRepository.save(userCart);
 	}
-	
+
 	@PostMapping("/viewCart")
 	public List<EcomCart> viewCart(@RequestBody EcomUser userId) {
 		return cartRepository.findByUserId(userId.getUserId());
