@@ -1,6 +1,6 @@
-package com.cts.entity;
+package com.ecom.entity;
 
-public class CtsUser {
+public class EcomUser {
 	
 	private String userId;
 

@@ -1,9 +1,10 @@
-package com.cts.entity;
+package com.ecom.entity;
 
 import javax.persistence.*;
 
 @Entity
-public class CtsProduct {
+@Table(name = "ECOM_PRODUCT")
+public class EcomProduct {
 	
 	@Id
 	@Column(name = "Product_Id")
@@ -49,11 +50,11 @@ public class CtsProduct {
 
 	@Override
 	public String toString() {
-		return "CtsProduct [productId=" + productId + ", productName=" + productName + ", productPrice=" + productPrice
+		return "EcomProduct [productId=" + productId + ", productName=" + productName + ", productPrice=" + productPrice
 				+ ", typeId=" + typeId + "]";
 	}
 
-	public CtsProduct(String productId, String productName, float productPrice, String typeId) {
+	public EcomProduct(String productId, String productName, float productPrice, String typeId) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -61,7 +62,7 @@ public class CtsProduct {
 		this.typeId = typeId;
 	}
 
-	public CtsProduct() {
+	public EcomProduct() {
 		super();
 	}
 

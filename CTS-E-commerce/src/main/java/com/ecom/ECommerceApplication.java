@@ -1,13 +1,13 @@
-package com.cts;
+package com.ecom;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CtsECommerceApplication {
+public class ECommerceApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(CtsECommerceApplication.class, args);
+		SpringApplication.run(ECommerceApplication.class, args);
 	}
 
 }

@@ -1,11 +1,13 @@
-package com.cts.entity;
+package com.ecom.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class CtsType {
+@Table(name = "ECOM_TYPE")
+public class EcomType {
 
 	@Id
 	@Column(name = "Type_Id")
@@ -15,10 +17,10 @@ public class CtsType {
 	@Column(name = "Catalog_Id")
 	private String catalogId;
 
-	public CtsType() {
+	public EcomType() {
 	}
 
-	public CtsType(String typeId, String typeName, String catalogId) {
+	public EcomType(String typeId, String typeName, String catalogId) {
 		super();
 		this.typeId = typeId;
 		this.typeName = typeName;
@@ -27,7 +29,7 @@ public class CtsType {
 
 	@Override
 	public String toString() {
-		return "CtsType [typeId=" + typeId + ", typeName=" + typeName + ", catalog_id=" + catalogId + "]";
+		return "EcomType [typeId=" + typeId + ", typeName=" + typeName + ", catalog_id=" + catalogId + "]";
 	}
 
 	public String getCatalogId() {

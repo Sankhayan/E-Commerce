@@ -1,9 +1,10 @@
-package com.cts.entity;
+package com.ecom.entity;
 
 import javax.persistence.*;
 
 @Entity
-public class CtsCatalog {
+@Table(name = "ECOM_CATALOG")
+public class EcomCatalog {
 
 	@Id
 	@Column(name = "Catalog_Id")
@@ -11,10 +12,10 @@ public class CtsCatalog {
 	@Column(name = "Catalog_Name")
 	private String catalogName;
 
-	public CtsCatalog() {
+	public EcomCatalog() {
 	}
 
-	public CtsCatalog(String catalogId, String catalogName) {
+	public EcomCatalog(String catalogId, String catalogName) {
 		super();
 		this.catalogId = catalogId;
 		this.catalogName = catalogName;
@@ -22,7 +23,7 @@ public class CtsCatalog {
 
 	@Override
 	public String toString() {
-		return "CtsCatalog [catalogId=" + catalogId + ", catalogName=" + catalogName + "]";
+		return "EcomCatalog [catalogId=" + catalogId + ", catalogName=" + catalogName + "]";
 	}
 
 	public String getCatalogId() {

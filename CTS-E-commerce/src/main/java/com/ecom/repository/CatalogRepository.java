@@ -1,11 +1,11 @@
-package com.cts.repository;
+package com.ecom.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cts.entity.*;
+import com.ecom.entity.*;
 
 @Repository
-public interface CatalogRepository extends JpaRepository<CtsCatalog, String> {
+public interface CatalogRepository extends JpaRepository<EcomCatalog, String> {
 
 }

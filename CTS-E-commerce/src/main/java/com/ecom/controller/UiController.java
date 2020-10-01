@@ -1,12 +1,12 @@
-package com.cts.controller;
+package com.ecom.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.cts.entity.*;
-import com.cts.repository.*;
+import com.ecom.entity.*;
+import com.ecom.repository.*;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -23,62 +23,62 @@ public class UiController {
 	private CartRepository cartRepository;
 
 	@GetMapping("/catalog")
-	public List<CtsCatalog> getCatalog() {
+	public List<EcomCatalog> getCatalog() {
 		return catalogRepository.findAll();
 	}
 
 	@GetMapping("/catalog/electronics")
-	public List<CtsType> getElectronics() {
+	public List<EcomType> getElectronics() {
 		return typeRepository.findByCatalogId("CTS-E");
 	}
 
 	@GetMapping("/catalog/fashion")
-	public List<CtsType> getFashion() {
+	public List<EcomType> getFashion() {
 		return typeRepository.findByCatalogId("CTS-F");
 	}
 
 	@GetMapping("/catalog/homeAppliances")
-	public List<CtsType> getHomeAppliances() {
+	public List<EcomType> getHomeAppliances() {
 		return typeRepository.findByCatalogId("CTS-H");
 	}
 
 	@GetMapping("/catalog/electronics/mobile")
-	public List<CtsProduct> getTypeMobile() {
+	public List<EcomProduct> getTypeMobile() {
 		return productRepository.findByTypeId("CTS-E/MOBILE");
 	}
 
 	@GetMapping("/catalog/electronics/laptop")
-	public List<CtsProduct> getTypeLaptop() {
+	public List<EcomProduct> getTypeLaptop() {
 		return productRepository.findByTypeId("CTS-E/LAPTOP");
 	}
 
 	@GetMapping("/catalog/fashion/men")
-	public List<CtsProduct> getTypemen() {
+	public List<EcomProduct> getTypemen() {
 		return productRepository.findByTypeId("CTS-F/MEN");
 	}
 
 	@GetMapping("/catalog/fashion/women")
-	public List<CtsProduct> getTypeWomen() {
+	public List<EcomProduct> getTypeWomen() {
 		return productRepository.findByTypeId("CTS-F/WOMEN");
 	}
 
 	@GetMapping("/catalog/homeAppliances/furniture")
-	public List<CtsProduct> getTypeFurniture() {
+	public List<EcomProduct> getTypeFurniture() {
 		return productRepository.findByTypeId("CTS-H/FURNITURE");
 	}
 
 	@GetMapping("/catalog/homeAppliances/decor")
-	public List<CtsProduct> getTypeDecore() {
+	public List<EcomProduct> getTypeDecore() {
 		return productRepository.findByTypeId("CTS-H/DECOR");
 	}
 
 	@PutMapping("/saveToCart")
-	public void saveToCart(@RequestBody CtsCart userCart) {
+	public void saveToCart(@RequestBody EcomCart userCart) {
 		cartRepository.save(userCart);
 	}
 	
 	@PostMapping("/viewCart")
-	public List<CtsCart> viewCart(@RequestBody CtsUser userId) {
+	public List<EcomCart> viewCart(@RequestBody EcomUser userId) {
 		return cartRepository.findByUserId(userId.getUserId());
 	}
 

@@ -1,9 +1,10 @@
-package com.cts.entity;
+package com.ecom.entity;
 
 import javax.persistence.*;
 
 @Entity
-public class CtsCart {
+@Table(name = "ECOM_CART")
+public class EcomCart {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -40,11 +41,11 @@ public class CtsCart {
 		this.productPrice = productPrice;
 	}
 
-	public CtsCart() {
+	public EcomCart() {
 		super();
 	}
 
-	public CtsCart(String userId, String productName, float productPrice) {
+	public EcomCart(String userId, String productName, float productPrice) {
 		super();
 		this.userId = userId;
 		this.productName = productName;
@@ -53,7 +54,7 @@ public class CtsCart {
 
 	@Override
 	public String toString() {
-		return "CtsCart [userId=" + userId + ", productName=" + productName + ", productPrice=" + productPrice + "]";
+		return "EcomCart [userId=" + userId + ", productName=" + productName + ", productPrice=" + productPrice + "]";
 	}
 
 	
