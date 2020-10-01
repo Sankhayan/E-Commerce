@@ -10,7 +10,7 @@ import com.ecom.repository.*;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/CTS-E-Commerce/*")
+@RequestMapping("/E-Commerce/*")
 public class UiController {
 
 	@Autowired
@@ -29,47 +29,47 @@ public class UiController {
 
 	@GetMapping("/catalog/electronics")
 	public List<EcomType> getElectronics() {
-		return typeRepository.findByCatalogId("CTS-E");
+		return typeRepository.findByCatalogId("ECOM-E");
 	}
 
 	@GetMapping("/catalog/fashion")
 	public List<EcomType> getFashion() {
-		return typeRepository.findByCatalogId("CTS-F");
+		return typeRepository.findByCatalogId("ECOM-F");
 	}
 
 	@GetMapping("/catalog/homeAppliances")
 	public List<EcomType> getHomeAppliances() {
-		return typeRepository.findByCatalogId("CTS-H");
+		return typeRepository.findByCatalogId("ECOM-H");
 	}
 
 	@GetMapping("/catalog/electronics/mobile")
 	public List<EcomProduct> getTypeMobile() {
-		return productRepository.findByTypeId("CTS-E/MOBILE");
+		return productRepository.findByTypeId("ECOM-E/MOBILE");
 	}
 
 	@GetMapping("/catalog/electronics/laptop")
 	public List<EcomProduct> getTypeLaptop() {
-		return productRepository.findByTypeId("CTS-E/LAPTOP");
+		return productRepository.findByTypeId("ECOM-E/LAPTOP");
 	}
 
 	@GetMapping("/catalog/fashion/men")
 	public List<EcomProduct> getTypemen() {
-		return productRepository.findByTypeId("CTS-F/MEN");
+		return productRepository.findByTypeId("ECOM-F/MEN");
 	}
 
 	@GetMapping("/catalog/fashion/women")
 	public List<EcomProduct> getTypeWomen() {
-		return productRepository.findByTypeId("CTS-F/WOMEN");
+		return productRepository.findByTypeId("ECOM-F/WOMEN");
 	}
 
 	@GetMapping("/catalog/homeAppliances/furniture")
 	public List<EcomProduct> getTypeFurniture() {
-		return productRepository.findByTypeId("CTS-H/FURNITURE");
+		return productRepository.findByTypeId("ECOM-H/FURNITURE");
 	}
 
 	@GetMapping("/catalog/homeAppliances/decor")
 	public List<EcomProduct> getTypeDecore() {
-		return productRepository.findByTypeId("CTS-H/DECOR");
+		return productRepository.findByTypeId("ECOM-H/DECOR");
 	}
 
 	@PutMapping("/saveToCart")
