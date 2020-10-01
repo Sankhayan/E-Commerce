@@ -57,6 +57,4 @@ public class EcomCart {
 		return "EcomCart [userId=" + userId + ", productName=" + productName + ", productPrice=" + productPrice + "]";
 	}
 
-	
-
 }

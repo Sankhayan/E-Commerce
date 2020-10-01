@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "ECOM_PRODUCT")
 public class EcomProduct {
-	
+
 	@Id
 	@Column(name = "Product_Id")
 	private String productId;
