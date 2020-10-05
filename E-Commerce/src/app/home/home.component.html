@@ -1,0 +1,39 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-nav" style="color: goldenrod;">
+            {{userName}}
+        </div>
+        <div class="navbar-nav">
+            <a routerLink="/home/{{userName}}" class="nav-link">Home</a>
+        </div>
+        <div class="navbar-nav navbar-collapse justify-content-end">
+            <a routerLink="/cart/{{userName}}" class="nav-link">Cart</a>
+            <a href="/login" class="nav-link">Logout</a>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <button (click)="getCatalog()" class="btn btn-default btn-block">CATALOG</button>
+</div>
+<div class="container text-center">
+    <table class="table table-trapped">
+		<thead align="center">
+			<tr>
+				<th *ngFor="let data of homeCatalog">{{data.catalogName}}</th>
+			</tr>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <td>
+                    <tr *ngFor="let data of homeElectronics"><button (click)="getElectronics(data.typeName)" class="btn btn-default">{{data.typeName}}</button><br><br></tr>
+                </td>
+                <td>
+                    <tr *ngFor="let data of homeFashion"><button (click)="getFashion(data.typeName)" class="btn btn-default">{{data.typeName}}</button><br><br></tr>
+                </td>
+                <td>
+                    <tr *ngFor="let data of homeHomeAppliances"><button (click)="getHomeAppliances(data.typeName)" class="btn btn-default">{{data.typeName}}</button><br><br></tr>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
