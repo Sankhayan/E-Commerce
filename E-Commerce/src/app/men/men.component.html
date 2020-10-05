@@ -1,0 +1,25 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-nav" style="color: goldenrod;">
+            {{userName}}
+        </div>
+        <div class="navbar-nav">
+            <a routerLink="/home/{{userName}}" class="nav-link">Home</a>
+        </div>
+        <div class="navbar-nav navbar-collapse justify-content-end">
+            <a routerLink="/cart/{{userName}}" class="nav-link">Cart</a>
+            <a href="/login" class="nav-link">Logout</a>
+        </div>
+    </nav>
+</header>
+<div class="container text-center">
+    <table class="table table-trapped">
+        <tbody align="center">
+            <tr *ngFor="let data of homeFashionMen">{{data.productName}}<br><br>
+                <td>{{data.productName}}<br><br></td>
+                <td>{{data.productPrice}}<br><br></td>
+                <td><button (click)="addToCart(data.productName, data.productPrice)" class="btn btn-success">Add to Cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
