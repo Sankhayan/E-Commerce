@@ -21,6 +21,7 @@ export class MenComponent implements OnInit {
 
   userCart: Cart;
   userName: string; 
+  cartStatus: any;
 
   constructor(private service: MenDataService, private route: ActivatedRoute) { }
 
@@ -31,7 +32,10 @@ export class MenComponent implements OnInit {
 
   addToCart(productName, productPrice) {
     this.userCart = new Cart(this.userName, productName, productPrice);
-    this.service.executeAddToCart(this.userCart).subscribe(response => console.log(this.userCart));
+    this.service.executeAddToCart(this.userCart).subscribe(response => this.cartStatus = response);
   }
 
+  showAlert() {
+    alert("Added To Cart");
+  }
 }

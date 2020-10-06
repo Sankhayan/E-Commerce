@@ -15,10 +15,10 @@
 <div class="container text-center">
     <table class="table table-trapped">
         <tbody align="center">
-            <tr *ngFor="let data of homeHomeAppliancesDecor">{{data.productName}}<br><br>
+            <tr *ngFor="let data of homeFashionMen">
                 <td>{{data.productName}}<br><br></td>
                 <td>{{data.productPrice}}<br><br></td>
-                <td><button (click)="addToCart(data.productName, data.productPrice)" class="btn btn-success">Add to Cart</button></td>
+                <td><button (click)="addToCart(data.productName, data.productPrice); showAlert();" class="btn btn-success">Add to Cart</button></td>
             </tr>
         </tbody>
     </table>
