@@ -82,4 +82,5 @@ public class UiController {
 	public List<EcomCart> viewCart(@RequestBody EcomUser userId) {
 		return cartRepository.findByUserId(userId.getUserId());
 	}
+	
 }
