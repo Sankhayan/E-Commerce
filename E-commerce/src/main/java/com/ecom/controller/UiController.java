@@ -53,7 +53,7 @@ public class UiController {
 	}
 
 	@GetMapping("/catalog/fashion/men")
-	public List<EcomProduct> getTypemen() {
+	public List<EcomProduct> getTypeMen() {
 		return productRepository.findByTypeId("ECOM-F/MEN");
 	}
 
@@ -73,8 +73,9 @@ public class UiController {
 	}
 
 	@PutMapping("/saveToCart")
-	public void saveToCart(@RequestBody EcomCart userCart) {
+	public String saveToCart(@RequestBody EcomCart userCart) {
 		cartRepository.save(userCart);
+		return "Added To Cart";
 	}
 
 	@PostMapping("/viewCart")
